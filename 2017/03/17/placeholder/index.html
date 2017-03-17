@@ -8,13 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>input的placeholder打字效果的实现 | CSL&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
+源码地址superplaceholder.js: github
+1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的texts(pl">
+<meta property="og:type" content="article">
 <meta property="og:title" content="input的placeholder打字效果的实现">
 <meta property="og:url" content="http://yoursite.com/2017/03/17/placeholder/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
-<meta property="og:updated_time" content="2017-03-17T08:11:32.000Z">
+<meta property="og:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
+源码地址superplaceholder.js: github
+1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的texts(pl">
+<meta property="og:updated_time" content="2017-03-17T09:09:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="input的placeholder打字效果的实现">
+<meta name="twitter:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
+源码地址superplaceholder.js: github
+1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的texts(pl">
   
     <link rel="alternative" href="/atom.xml" title="CSL&#39;S BLOG" type="application/atom+xml">
   
@@ -174,7 +183,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)</p>
+<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p>superplaceholder.js: <a href="https://github.com/chinchang/superplaceholder.js" target="_blank" rel="external">github</a></p>
+<h2 id="1-打字效果实现原理"><a href="#1-打字效果实现原理" class="headerlink" title="1.  打字效果实现原理"></a>1.  打字效果实现原理</h2><p>模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的<strong>texts</strong>(placeholder值的数组),<strong>textDelay</strong>(切换句子时的时间间隔),<strong>letterDelay</strong>(每打一个字的时间间隔),定时给input元素setAttribute <strong>placeholder</strong>属性.</p>
+<p>还要考虑到是否聚焦<strong>startOnFocus</strong>的时候开始执行该打字效果,是否循环<strong>loop</strong>,以及打字光标<strong>cursor</strong>.</p>
+<h2 id="2-Start"><a href="#2-Start" class="headerlink" title="2.  Start"></a>2.  Start</h2><h3 id="检查input是否支持placeholder属性"><a href="#检查input是否支持placeholder属性" class="headerlink" title="检查input是否支持placeholder属性"></a>检查input是否支持placeholder属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//创建一个input元素,判断是否支持placeholder属性</div><div class="line">var <span class="built_in">test</span> = document.createElement(<span class="string">'input'</span>);</div><div class="line">var isPlaceHolderSupported = (<span class="string">'placeholder'</span> <span class="keyword">in</span> <span class="built_in">test</span>);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>定义默认参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//默认参数options</div><div class="line">var defaults = &#123;</div><div class="line">	letterDelay: 100, //每个字显示的时间间隔</div><div class="line">	textDelay: 1000,  //句子切换时间间隔</div><div class="line">	loop: <span class="literal">false</span>,  //是否循环显示</div><div class="line">	startOnFocus: <span class="literal">true</span>, //获取焦点,显示打字效果</div><div class="line">	showCursor: <span class="literal">true</span>,  //显示打字效果光标</div><div class="line">	cursor: <span class="string">'|'</span>  //光标</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>构造PlaceHolder方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//构造一个PlaceHolder方法 options里没有设置的属性就使用默认的</div><div class="line"><span class="keyword">function</span> PlaceHolder(el, texts, options)&#123;</div><div class="line">	this.el = el;</div><div class="line">	this.texts = texts;</div><div class="line">	options = options || &#123;&#125;;</div><div class="line">	this.options = extend(defaults, options);</div><div class="line">	this.timeouts = [];</div><div class="line">	this.begin();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
       
 
       
@@ -187,7 +204,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>扎心了,老铁<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     

@@ -175,6 +175,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)</p>
+<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p>superplaceholder.js: <a href="https://github.com/chinchang/superplaceholder.js">github</a></p>
+<h2 id="1-打字效果实现原理"><a href="#1-打字效果实现原理" class="headerlink" title="1.  打字效果实现原理"></a>1.  打字效果实现原理</h2><p>模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的<strong>texts</strong>(placeholder值的数组),<strong>textDelay</strong>(切换句子时的时间间隔),<strong>letterDelay</strong>(每打一个字的时间间隔),定时给input元素setAttribute <strong>placeholder</strong>属性.</p>
+<p>还要考虑到是否聚焦<strong>startOnFocus</strong>的时候开始执行该打字效果,是否循环<strong>loop</strong>,以及打字光标<strong>cursor</strong>.</p>
+<h2 id="2-Start"><a href="#2-Start" class="headerlink" title="2.  Start"></a>2.  Start</h2><h3 id="检查input是否支持placeholder属性"><a href="#检查input是否支持placeholder属性" class="headerlink" title="检查input是否支持placeholder属性"></a>检查input是否支持placeholder属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//创建一个input元素,判断是否支持placeholder属性</div><div class="line">var <span class="built_in">test</span> = document.createElement(<span class="string">'input'</span>);</div><div class="line">var isPlaceHolderSupported = (<span class="string">'placeholder'</span> <span class="keyword">in</span> <span class="built_in">test</span>);</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/03/17/placeholder/#more">more >></a>
         
       
 
