@@ -18,7 +18,7 @@
 <meta property="og:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
 源码地址superplaceholder.js: github
 1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的texts(pl">
-<meta property="og:updated_time" content="2017-03-17T09:09:49.000Z">
+<meta property="og:updated_time" content="2017-03-17T09:51:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="input的placeholder打字效果的实现">
 <meta name="twitter:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
@@ -90,7 +90,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/linxianshen" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="http://weibo.com/2961714995" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
@@ -133,7 +133,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/linxianshen" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="http://weibo.com/2961714995" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
@@ -184,7 +184,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)</p>
-<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p>superplaceholder.js: <a href="https://github.com/chinchang/superplaceholder.js" target="_blank" rel="external">github</a></p>
+<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p><strong>superplaceholder.js</strong>: <a href="https://github.com/chinchang/superplaceholder.js" target="_blank" rel="external">github</a></p>
 <h2 id="1-打字效果实现原理"><a href="#1-打字效果实现原理" class="headerlink" title="1.  打字效果实现原理"></a>1.  打字效果实现原理</h2><p>模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的<strong>texts</strong>(placeholder值的数组),<strong>textDelay</strong>(切换句子时的时间间隔),<strong>letterDelay</strong>(每打一个字的时间间隔),定时给input元素setAttribute <strong>placeholder</strong>属性.</p>
 <p>还要考虑到是否聚焦<strong>startOnFocus</strong>的时候开始执行该打字效果,是否循环<strong>loop</strong>,以及打字光标<strong>cursor</strong>.</p>
 <h2 id="2-Start"><a href="#2-Start" class="headerlink" title="2.  Start"></a>2.  Start</h2><h3 id="检查input是否支持placeholder属性"><a href="#检查input是否支持placeholder属性" class="headerlink" title="检查input是否支持placeholder属性"></a>检查input是否支持placeholder属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//创建一个input元素,判断是否支持placeholder属性</div><div class="line">var <span class="built_in">test</span> = document.createElement(<span class="string">'input'</span>);</div><div class="line">var isPlaceHolderSupported = (<span class="string">'placeholder'</span> <span class="keyword">in</span> <span class="built_in">test</span>);</div></pre></td></tr></table></figure>
@@ -309,7 +309,25 @@
 
 
   
-    <div class="duoshuo"></div>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="placeholder" data-title="input的placeholder打字效果的实现" data-url="http://yoursite.com/2017/03/17/placeholder/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"linxianshen"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
 
@@ -457,11 +475,11 @@
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://my.oschina.net/cslailolia" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>开源中国</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="http://sidfate.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>沈毛</a>
             </li>
           
             <li class="search-li">
