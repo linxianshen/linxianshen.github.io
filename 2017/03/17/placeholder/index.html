@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>input的placeholder打字效果的实现 | CSL&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
+  <meta name="description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议多去看看github上的各位大牛的代码,学习吧骚年)
 源码地址superplaceholder.js: github
 1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的tex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="input的placeholder打字效果的实现">
 <meta property="og:url" content="http://yoursite.com/2017/03/17/placeholder/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
-<meta property="og:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
+<meta property="og:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议多去看看github上的各位大牛的代码,学习吧骚年)
 源码地址superplaceholder.js: github
 1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的tex">
-<meta property="og:updated_time" content="2017-03-18T02:15:07.000Z">
+<meta property="og:updated_time" content="2017-03-18T02:50:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="input的placeholder打字效果的实现">
-<meta name="twitter:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)
+<meta name="twitter:description" content="看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议多去看看github上的各位大牛的代码,学习吧骚年)
 源码地址superplaceholder.js: github
 1.  打字效果实现原理模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的tex">
   
@@ -189,7 +189,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议我多去看看github上的各位大牛的代码,学习吧骚年)</p>
+        <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86   
+    src="http://music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66">  
+</iframe>  -->
+<p>看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议多去看看github上的各位大牛的代码,学习吧骚年)</p>
 <h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p><strong>superplaceholder.js</strong>: <a href="https://github.com/chinchang/superplaceholder.js" target="_blank" rel="external">github</a></p>
 <h2 id="1-打字效果实现原理"><a href="#1-打字效果实现原理" class="headerlink" title="1.  打字效果实现原理"></a>1.  打字效果实现原理</h2><p>模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的<strong>texts</strong>(placeholder值的数组),<strong>textDelay</strong>(切换句子时的时间间隔),<strong>letterDelay</strong>(每打一个字的时间间隔),定时给input元素setAttribute <strong>placeholder</strong>属性.</p>
 <p>还要考虑到是否聚焦<strong>startOnFocus</strong>的时候开始执行该打字效果,是否循环<strong>loop</strong>,以及打字光标<strong>cursor</strong>.</p>
@@ -309,6 +312,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/03/18/interviewques/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          前端面试题(持续更新)
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -432,6 +444,14 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
