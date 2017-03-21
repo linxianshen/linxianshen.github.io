@@ -161,6 +161,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-swapItems" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/21/swapItems/">数组中元素前后(上下)移动函数</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/21/swapItems/" class="archive-article-date">
+  	<time datetime="2017-03-21T08:57:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组内元素交换"><a href="#数组内元素交换" class="headerlink" title="数组内元素交换"></a>数组内元素交换</h2><p>在使用angular或vue时, ng-repeat和v-for都能很方便得到遍历的数组中的某个元素的$index, 本文以在angular下为例:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var swapItems = <span class="keyword">function</span>(arr, index1, index2) &#123;</div><div class="line">  arr[index1] = arr.splice(index2, 1, arr[index1])[0];</div><div class="line">  <span class="built_in">return</span> arr;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>该函数使得index1,index2两位置的元素交换</p>
+<h2 id="元素上移或下移"><a href="#元素上移或下移" class="headerlink" title="元素上移或下移"></a>元素上移或下移</h2><p>上移即将 选中元素与上一个元素交换位置,注意边界<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.upMove = <span class="keyword">function</span>(arr, <span class="variable">$index</span>) &#123;</div><div class="line">  <span class="keyword">if</span>(<span class="variable">$index</span> == 0) &#123;</div><div class="line">  	<span class="built_in">return</span>;</div><div class="line">  &#125;</div><div class="line">  swapItems(arr, <span class="variable">$index</span>, <span class="variable">$index</span> - 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>同理 下移即将 选中元素与下一个元素交换位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.downMove = <span class="keyword">function</span>(arr, <span class="variable">$index</span>) &#123;</div><div class="line">  <span class="keyword">if</span>(<span class="variable">$index</span> == arr.length -1) &#123;</div><div class="line">  	<span class="built_in">return</span>;</div><div class="line">  &#125;</div><div class="line">  swapItems(arr, <span class="variable">$index</span>, <span class="variable">$index</span> + 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">angular</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/21/swapItems/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-interviewques" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -454,6 +524,14 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
               </li>
              
@@ -462,11 +540,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
             
             <div class="clearfix"></div>
