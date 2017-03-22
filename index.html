@@ -183,7 +183,7 @@
       
         <p>获取天气nodejs接口在实际开发中需要定时调用,在此处需要安装node-schedule定时模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install node-schedule</div></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var url = <span class="string">'http://saweather.market.alicloudapi.com/gps-to-weather'</span>;</div><div class="line">var params = &#123;  //还有一些可选参数,参照api</div><div class="line">    from: 5,</div><div class="line">    needAlarm: 1,</div><div class="line">    needIndex: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>阿里云天气预报api</strong>: <a href="https://market.aliyun.com/products/?keyword=%E5%A4%A9%E6%B0%94&amp;c=m#ymk=%7B%22keywords%22:%22%E5%A4%A9%E6%B0%94%22,%22pageIndex%22:1,%22pageSize%22:10,%22saleMode%22:0,%22categoryId%22:%22%22%7D">click</a><br>注册登录购买免费版,会提供给你一个AppKey, AppSecret和AppCode,用于请求验证,注意是放在头部headers内的</p>
+<p><strong>阿里云天气预报api</strong>: <a href="https://market.aliyun.com/products/?keyword=%E5%A4%A9%E6%B0%94&amp;c=m#ymk=%7B%22keywords%22:%22%E5%A4%A9%E6%B0%94%22,%22pageIndex%22:1,%22pageSize%22:10,%22saleMode%22:0,%22categoryId%22:%22%22%7D">click</a><br>注册登录购买免费版,会提供给你一个AppKey, AppSecret和AppCode,用于请求验证,注意是放在头部headers内的(别拼接到了url里==)</p>
         
           <a class="article-more-a" href="/2017/03/22/weatherapi/#more">more >></a>
         
@@ -199,11 +199,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -610,19 +610,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,6 +623,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">天气</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
             
             <div class="clearfix"></div>

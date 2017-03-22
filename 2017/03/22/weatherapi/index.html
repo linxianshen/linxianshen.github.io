@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="CSL'S BLOG">
 <meta property="og:description" content="获取天气nodejs接口在实际开发中需要定时调用,在此处需要安装node-schedule定时模块1sudo npm install node-schedule
 123456var url = &apos;http://saweather.market.alicloudapi.com/gps-to-weather&apos;;var params = &amp;#123;  //还有一些可选参数,参照api    from:">
-<meta property="og:updated_time" content="2017-03-22T12:17:05.000Z">
+<meta property="og:updated_time" content="2017-03-22T12:21:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs定时调用阿里云天气api">
 <meta name="twitter:description" content="获取天气nodejs接口在实际开发中需要定时调用,在此处需要安装node-schedule定时模块1sudo npm install node-schedule
@@ -188,7 +188,7 @@
       
         <p>获取天气nodejs接口在实际开发中需要定时调用,在此处需要安装node-schedule定时模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install node-schedule</div></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var url = <span class="string">'http://saweather.market.alicloudapi.com/gps-to-weather'</span>;</div><div class="line">var params = &#123;  //还有一些可选参数,参照api</div><div class="line">    from: 5,</div><div class="line">    needAlarm: 1,</div><div class="line">    needIndex: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>阿里云天气预报api</strong>: <a href="https://market.aliyun.com/products/?keyword=%E5%A4%A9%E6%B0%94&amp;c=m#ymk=%7B%22keywords%22:%22%E5%A4%A9%E6%B0%94%22,%22pageIndex%22:1,%22pageSize%22:10,%22saleMode%22:0,%22categoryId%22:%22%22%7D" target="_blank" rel="external">click</a><br>注册登录购买免费版,会提供给你一个AppKey, AppSecret和AppCode,用于请求验证,注意是放在头部headers内的</p>
+<p><strong>阿里云天气预报api</strong>: <a href="https://market.aliyun.com/products/?keyword=%E5%A4%A9%E6%B0%94&amp;c=m#ymk=%7B%22keywords%22:%22%E5%A4%A9%E6%B0%94%22,%22pageIndex%22:1,%22pageSize%22:10,%22saleMode%22:0,%22categoryId%22:%22%22%7D" target="_blank" rel="external">click</a><br>注册登录购买免费版,会提供给你一个AppKey, AppSecret和AppCode,用于请求验证,注意是放在头部headers内的(别拼接到了url里==)</p>
 <a id="more"></a>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var headers = &#123;</div><div class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Super Agent/0.0.1'</span>,</div><div class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span>,</div><div class="line">    <span class="string">'Authorization'</span>: <span class="string">'APPCODE '</span> + <span class="string">'your appcode'</span>    //填写你自己的appcode</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>ok! 参数请求参数都有了, 现在就只要给请求设置一个定时任务了, 我在这里使用了node-schedule这个模块, 当然你也可以自己写定时器, 功能还是都能实现的.<br>在实际开发中, 遇到需要定时任务的工作还是蛮多的, 比如: 定时发送消息, 导出or清除数据, 定时请求api等等.</p>
@@ -231,11 +231,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -445,19 +445,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,6 +458,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">天气</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
             
             <div class="clearfix"></div>
