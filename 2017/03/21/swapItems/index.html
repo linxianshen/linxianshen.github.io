@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="CSL'S BLOG">
 <meta property="og:description" content="数组内元素交换在使用angular或vue时, ng-repeat和v-for都能很方便得到遍历的数组中的某个元素的$index, 本文以在angular下为例:
 1234var swapItems = function(arr, index1, index2) &amp;#123;  arr[index1] = arr.splice(index2, 1, arr[index1])[0];  return">
-<meta property="og:updated_time" content="2017-03-21T09:14:50.000Z">
+<meta property="og:updated_time" content="2017-03-21T09:16:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组中元素前后(上下)移动函数">
 <meta name="twitter:description" content="数组内元素交换在使用angular或vue时, ng-repeat和v-for都能很方便得到遍历的数组中的某个元素的$index, 本文以在angular下为例:
@@ -189,6 +189,7 @@
         <h2 id="数组内元素交换"><a href="#数组内元素交换" class="headerlink" title="数组内元素交换"></a>数组内元素交换</h2><p>在使用angular或vue时, ng-repeat和v-for都能很方便得到遍历的数组中的某个元素的$index, 本文以在angular下为例:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var swapItems = <span class="keyword">function</span>(arr, index1, index2) &#123;</div><div class="line">  arr[index1] = arr.splice(index2, 1, arr[index1])[0];</div><div class="line">  <span class="built_in">return</span> arr;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>该函数使得index1,index2两位置的元素交换</p>
+<a id="more"></a>
 <h2 id="元素上移或下移"><a href="#元素上移或下移" class="headerlink" title="元素上移或下移"></a>元素上移或下移</h2><p>上移即将 选中元素与上一个元素交换位置,注意边界<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.upMove = <span class="keyword">function</span>(arr, <span class="variable">$index</span>) &#123;</div><div class="line">  <span class="keyword">if</span>(<span class="variable">$index</span> == 0) &#123;</div><div class="line">  	<span class="built_in">return</span>;</div><div class="line">  &#125;</div><div class="line">  swapItems(arr, <span class="variable">$index</span>, <span class="variable">$index</span> - 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>同理 下移即将 选中元素与下一个元素交换位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.downMove = <span class="keyword">function</span>(arr, <span class="variable">$index</span>) &#123;</div><div class="line">  <span class="keyword">if</span>(<span class="variable">$index</span> == arr.length -1) &#123;</div><div class="line">  	<span class="built_in">return</span>;</div><div class="line">  &#125;</div><div class="line">  swapItems(arr, <span class="variable">$index</span>, <span class="variable">$index</span> + 1);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
@@ -298,6 +299,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/03/22/weatherapi/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          nodejs定时调用阿里云天气api
+        
+      </div>
+    </a>
   
   
     <a href="/2017/03/18/interviewques/" id="article-nav-older" class="article-nav-link-wrap">
@@ -435,11 +445,23 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">node-schedule</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">天气</a>
               </li>
             
             <div class="clearfix"></div>
