@@ -4,9 +4,9 @@
   <subtitle>Thinking will not overcome fear but action will.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-04-07T06:51:43.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://linxianshen.github.io/"/>
+  <updated>2017-04-07T06:55:16.000Z</updated>
+  <id>https://linxianshen.github.io/</id>
   
   <author>
     <name>蔡双临</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Git命令操作-上传文件到github仓库</title>
-    <link href="http://yoursite.com/2017/04/07/gitcommand/"/>
-    <id>http://yoursite.com/2017/04/07/gitcommand/</id>
+    <link href="https://linxianshen.github.io/2017/04/07/gitcommand/"/>
+    <id>https://linxianshen.github.io/2017/04/07/gitcommand/</id>
     <published>2017-04-07T06:17:41.000Z</published>
-    <updated>2017-04-07T06:51:43.000Z</updated>
+    <updated>2017-04-07T06:55:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.<br>那么如何将本地的项目文件上传至github上呢.</p>
 <p>如果是首次上传项目文件则:<br>先进入文件夹, 通过git init把这个目录变成git可以管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
@@ -45,14 +45,14 @@
     </summary>
     
     
-      <category term="git命令" scheme="http://yoursite.com/tags/git%E5%91%BD%E4%BB%A4/"/>
+      <category term="git命令" scheme="https://linxianshen.github.io/tags/git%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>js生成网页pdf或打印的方法</title>
-    <link href="http://yoursite.com/2017/03/27/printpdf/"/>
-    <id>http://yoursite.com/2017/03/27/printpdf/</id>
+    <link href="https://linxianshen.github.io/2017/03/27/printpdf/"/>
+    <id>https://linxianshen.github.io/2017/03/27/printpdf/</id>
     <published>2017-03-27T08:59:41.000Z</published>
     <updated>2017-03-27T10:04:15.000Z</updated>
     
@@ -71,14 +71,14 @@
     </summary>
     
     
-      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+      <category term="javaScript" scheme="https://linxianshen.github.io/tags/javaScript/"/>
     
   </entry>
   
   <entry>
     <title>nodejs定时调用阿里云天气api</title>
-    <link href="http://yoursite.com/2017/03/22/weatherapi/"/>
-    <id>http://yoursite.com/2017/03/22/weatherapi/</id>
+    <link href="https://linxianshen.github.io/2017/03/22/weatherapi/"/>
+    <id>https://linxianshen.github.io/2017/03/22/weatherapi/</id>
     <published>2017-03-22T11:31:09.000Z</published>
     <updated>2017-03-27T08:58:47.000Z</updated>
     
@@ -104,20 +104,20 @@
     </summary>
     
     
-      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+      <category term="javaScript" scheme="https://linxianshen.github.io/tags/javaScript/"/>
     
-      <category term="nodejs" scheme="http://yoursite.com/tags/nodejs/"/>
+      <category term="nodejs" scheme="https://linxianshen.github.io/tags/nodejs/"/>
     
-      <category term="node-schedule" scheme="http://yoursite.com/tags/node-schedule/"/>
+      <category term="node-schedule" scheme="https://linxianshen.github.io/tags/node-schedule/"/>
     
-      <category term="天气" scheme="http://yoursite.com/tags/%E5%A4%A9%E6%B0%94/"/>
+      <category term="天气" scheme="https://linxianshen.github.io/tags/%E5%A4%A9%E6%B0%94/"/>
     
   </entry>
   
   <entry>
     <title>数组中元素前后(上下)移动函数</title>
-    <link href="http://yoursite.com/2017/03/21/swapItems/"/>
-    <id>http://yoursite.com/2017/03/21/swapItems/</id>
+    <link href="https://linxianshen.github.io/2017/03/21/swapItems/"/>
+    <id>https://linxianshen.github.io/2017/03/21/swapItems/</id>
     <published>2017-03-21T08:57:54.000Z</published>
     <updated>2017-03-21T09:16:20.000Z</updated>
     
@@ -138,16 +138,16 @@
     </summary>
     
     
-      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+      <category term="javaScript" scheme="https://linxianshen.github.io/tags/javaScript/"/>
     
-      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+      <category term="angular" scheme="https://linxianshen.github.io/tags/angular/"/>
     
   </entry>
   
   <entry>
     <title>前端面试题(持续更新)</title>
-    <link href="http://yoursite.com/2017/03/18/interviewques/"/>
-    <id>http://yoursite.com/2017/03/18/interviewques/</id>
+    <link href="https://linxianshen.github.io/2017/03/18/interviewques/"/>
+    <id>https://linxianshen.github.io/2017/03/18/interviewques/</id>
     <published>2017-03-18T02:41:39.000Z</published>
     <updated>2017-03-21T08:34:47.000Z</updated>
     
@@ -184,16 +184,16 @@
     </summary>
     
     
-      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://linxianshen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="面试题" scheme="https://linxianshen.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>input的placeholder打字效果的实现</title>
-    <link href="http://yoursite.com/2017/03/17/placeholder/"/>
-    <id>http://yoursite.com/2017/03/17/placeholder/</id>
+    <link href="https://linxianshen.github.io/2017/03/17/placeholder/"/>
+    <id>https://linxianshen.github.io/2017/03/17/placeholder/</id>
     <published>2017-03-17T07:35:20.000Z</published>
     <updated>2017-03-18T02:50:17.000Z</updated>
     
@@ -228,16 +228,16 @@
     </summary>
     
     
-      <category term="javaScript" scheme="http://yoursite.com/tags/javaScript/"/>
+      <category term="javaScript" scheme="https://linxianshen.github.io/tags/javaScript/"/>
     
-      <category term="placeholder" scheme="http://yoursite.com/tags/placeholder/"/>
+      <category term="placeholder" scheme="https://linxianshen.github.io/tags/placeholder/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/03/16/hello-world/"/>
-    <id>http://yoursite.com/2017/03/16/hello-world/</id>
+    <link href="https://linxianshen.github.io/2017/03/16/hello-world/"/>
+    <id>https://linxianshen.github.io/2017/03/16/hello-world/</id>
     <published>2017-03-16T09:04:57.000Z</published>
     <updated>2017-03-16T09:04:57.000Z</updated>
     
