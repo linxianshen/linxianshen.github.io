@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-27T10:04:15.000Z</updated>
+  <updated>2017-04-07T06:51:43.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git命令操作-上传文件到github仓库</title>
+    <link href="http://yoursite.com/2017/04/07/gitcommand/"/>
+    <id>http://yoursite.com/2017/04/07/gitcommand/</id>
+    <published>2017-04-07T06:17:41.000Z</published>
+    <updated>2017-04-07T06:51:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.<br>那么如何将本地的项目文件上传至github上呢.</p>
+<p>如果是首次上传项目文件则:<br>先进入文件夹, 通过git init把这个目录变成git可以管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>把文件添加到版本库中, 使用git add .命令, 不要忘了’.’, 意思是添加文件夹下的所有文件到暂存区里<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add .</div></pre></td></tr></table></figure></p>
+<p>用命令git commit告诉Git把文件提交到仓库, 引号里面的是提交说明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">'提交上传备注说明'</span></div></pre></td></tr></table></figure></p>
+<p>关联到远程库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin 远程库地址</div></pre></td></tr></table></figure></p>
+<p>获取远程库与本地同步合并(如果远程库不为空, 则必须做这一步, 否则后面会提交失败)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull --rebase origin master</div></pre></td></tr></table></figure></p>
+<p>本地库内容推送到远程, 使用git push命令,实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
+<hr>
+<p>在上传完项目,之后又修改了,并且再上传需要的git命令</p>
+<p>查看项目文件状态,提示了本地修改了哪些文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git status</div></pre></td></tr></table></figure></p>
+<p>把新增修改的文件到暂存区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add -A</div></pre></td></tr></table></figure></p>
+<p>添加备注git commit -m “备注说明”<br>更新git pull –rebase origin master<br>上传git push -u origin master</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.&lt;br&gt;那么如何将本地的项目文件上传至github上呢.&lt;/p&gt;
+&lt;p&gt;如果是首次上传项目文件则:&lt;br&gt;先进入文件夹, 通过git init把这个目录变成git可以管理的仓库&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git init&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git命令" scheme="http://yoursite.com/tags/git%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>js生成网页pdf或打印的方法</title>
