@@ -18,15 +18,15 @@
 <meta property="og:description" content="前提啊…这是上次清明回家上网买车票是看到的一个input显示插件,感觉比较常用的.实现起来也不难, 就想着抽空也来写一个类似的气泡弹框插件.
 清明到现在也鸽了这么久了, 找了个时间现在来分享一下实现的步骤…
 代码在这:github">
-<meta property="og:image" content="https://linxianshen.github.io/img/el.jpeg">
-<meta property="og:image" content="https://linxianshen.github.io/img/inputtip.gif">
-<meta property="og:updated_time" content="2017-04-13T08:13:40.000Z">
+<meta property="og:image" content="https://github.com/linxianshen/linxianshen.github.io/blob/master/img/el.jpeg">
+<meta property="og:image" content="https://github.com/linxianshen/linxianshen.github.io/blob/master/img/inputtip.gif">
+<meta property="og:updated_time" content="2017-04-13T08:49:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="input输入框校对气泡插件的实现">
 <meta name="twitter:description" content="前提啊…这是上次清明回家上网买车票是看到的一个input显示插件,感觉比较常用的.实现起来也不难, 就想着抽空也来写一个类似的气泡弹框插件.
 清明到现在也鸽了这么久了, 找了个时间现在来分享一下实现的步骤…
 代码在这:github">
-<meta name="twitter:image" content="https://linxianshen.github.io/img/el.jpeg">
+<meta name="twitter:image" content="https://github.com/linxianshen/linxianshen.github.io/blob/master/img/el.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="CSL&#39;S BLOG" type="application/atom+xml">
   
@@ -200,14 +200,14 @@
 <p>整体的思路也就是前端调用tipInput()方法去生成一个气泡Div, 并且要相对需要此功能的input的种种属性.</p>
 <p>因此在这里就直接将input的id作为参数, 调用气泡生成的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tipInput(&#123;el: tip&#125;)  //tip为input的id</div></pre></td></tr></table></figure></p>
 <p>校验传的参数是否input元素并且是text属性的输入框<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var tipInput = <span class="keyword">function</span>(params) &#123;</div><div class="line">    <span class="keyword">if</span> (params.el.tagName == <span class="string">'INPUT'</span> &amp;&amp; params.el.type == <span class="string">'text'</span>) &#123; //判断元素是否为input text的</div><div class="line">        new InputTip(params.el);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接下来的操作基本都是对获取到的input#tip元素的属性的应用<br><img src="/img/el.jpeg" alt="input"></p>
+<p>接下来的操作基本都是对获取到的input#tip元素的属性的应用<br><img src="https://github.com/linxianshen/linxianshen.github.io/blob/master/img/el.jpeg" alt="input"></p>
 <hr>
 <p>在createTipDiv方法中,主要的操作就是, 动态生成tipwrap内容节点, 并赋予宽高, 定位等属性.<br>在创建成功之后,为input添加focus, blur以及keyup键盘事件, 来控制tipwrap的显示与否</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> InputTip(el) &#123;</div><div class="line">    this.el = el;</div><div class="line">    this.createTipDiv();   //create the tip based on input elem </div><div class="line">&#125;</div><div class="line"></div><div class="line">//create tipwrap div</div><div class="line">InputTip.prototype.createTipDiv = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="built_in">let</span> self = this;</div><div class="line">    <span class="built_in">let</span> elem = document.createElement(<span class="string">"div"</span>);</div><div class="line">    elem.id = <span class="string">'tipwrap'</span>;</div><div class="line">    elem.style = <span class="string">'position: absolute;color: black;top:'</span> + (self.el.offsetTop - self.el.clientHeight - 14) + <span class="string">'px;left:'</span> + self.el.offsetLeft + <span class="string">'px;'</span>;</div><div class="line">    elem.hidden = <span class="literal">true</span>; //begin hidden</div><div class="line">    elem.innerHTML = <span class="string">"&lt;div id='rect' style='background: #eee;border-radius: 4px;padding: 4px;font-size:"</span> + (self.el.size + 2) + <span class="string">"px;height:"</span> + self.el.clientHeight + <span class="string">"px;min-width:"</span> + self.el.clientWidth + <span class="string">"px;'&gt;&lt;/div&gt;&lt;span id='triangle' style='display: block;margin-left:"</span> + (self.el.clientWidth / 10) + <span class="string">"px;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #eee;'&gt;&lt;/span&gt;"</span>;</div><div class="line">    self.el.parentElement.appendChild(elem);</div><div class="line">    self.el.addEventListener(<span class="string">'focus'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        <span class="keyword">if</span> (self.el.value) &#123;</div><div class="line">            elem.hidden = <span class="literal">false</span>;   //show tipwrap</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    self.el.addEventListener(<span class="string">'blur'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        elem.hidden = <span class="literal">true</span>;   // hide tipwrap</div><div class="line">    &#125;);</div><div class="line">    self.el.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        self.textShowRealTime(elem); //show <span class="keyword">in</span> time </div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>input的keyup事件, 就是每次按下都去重新给气泡上的内容赋值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//show <span class="keyword">in</span> time when keyup event</div><div class="line">InputTip.prototype.textShowRealTime = <span class="keyword">function</span>(elem) &#123;</div><div class="line">    <span class="built_in">let</span> self = this;</div><div class="line">    <span class="built_in">let</span> tipNode = document.getElementById(<span class="string">"triangle"</span>);</div><div class="line">    <span class="keyword">if</span> (self.el.value) &#123;</div><div class="line">        elem.hidden = <span class="literal">false</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        elem.hidden = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    elem.children[0].innerHTML = self.el.value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/img/inputtip.gif" alt="效果"></p>
+<p><img src="https://github.com/linxianshen/linxianshen.github.io/blob/master/img/inputtip.gif" alt="效果"></p>
 <p>跟头像一样丑是丑了点, 客官将就看看吧…</p>
 <p>哦, 还有, 剧透一下人民的名义, o(*≧▽≦)ツ┏━┓铁胆神侯朱无视才是最大boss.</p>
 
@@ -483,15 +483,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
               </li>
              
               <li class="article-tag-list-item">
