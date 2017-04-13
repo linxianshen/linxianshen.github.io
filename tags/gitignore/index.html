@@ -6,21 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://linxianshen.github.io">
-  <title>Git命令操作-上传文件到github仓库 | CSL&#39;S BLOG</title>
+  <title>Tag: .gitignore | CSL&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.那么如何将本地的项目文件上传至github上呢.
-如果是首次上传项目文件则:先进入文件夹, 通过git init把这个目录变成git可以管理的仓库1git init">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git命令操作-上传文件到github仓库">
-<meta property="og:url" content="https://linxianshen.github.io/2017/04/07/gitcommand/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="CSL'S BLOG">
+<meta property="og:url" content="https://linxianshen.github.io/tags/gitignore/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
-<meta property="og:description" content="作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.那么如何将本地的项目文件上传至github上呢.
-如果是首次上传项目文件则:先进入文件夹, 通过git init把这个目录变成git可以管理的仓库1git init">
-<meta property="og:updated_time" content="2017-04-07T06:55:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git命令操作-上传文件到github仓库">
-<meta name="twitter:description" content="作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.那么如何将本地的项目文件上传至github上呢.
-如果是首次上传项目文件则:先进入文件夹, 通过git init把这个目录变成git可以管理的仓库1git init">
+<meta name="twitter:title" content="CSL'S BLOG">
   
     <link rel="alternative" href="/atom.xml" title="CSL&#39;S BLOG" type="application/atom+xml">
   
@@ -166,188 +159,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-gitcommand" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Git命令操作-上传文件到github仓库
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/04/08/gitignore/" class="archive-article-date">
+  	<time datetime="2017-04-08T09:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/04/08/gitignore/">.gitignore配置</a>
     </h1>
   
 
-        
-        <a href="/2017/04/07/gitcommand/" class="archive-article-date">
-  	<time datetime="2017-04-07T06:17:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.<br>那么如何将本地的项目文件上传至github上呢.</p>
-<p>如果是首次上传项目文件则:<br>先进入文件夹, 通过git init把这个目录变成git可以管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>把文件添加到版本库中, 使用git add .命令, 不要忘了’.’, 意思是添加文件夹下的所有文件到暂存区里<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add .</div></pre></td></tr></table></figure></p>
-<p>用命令git commit告诉Git把文件提交到仓库, 引号里面的是提交说明<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit -m <span class="string">'提交上传备注说明'</span></div></pre></td></tr></table></figure></p>
-<p>关联到远程库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin 远程库地址</div></pre></td></tr></table></figure></p>
-<p>获取远程库与本地同步合并(如果远程库不为空, 则必须做这一步, 否则后面会提交失败)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull --rebase origin master</div></pre></td></tr></table></figure></p>
-<p>本地库内容推送到远程, 使用git push命令,实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
-<hr>
-<p>在上传完项目,之后又修改了,并且再上传需要的git命令</p>
-<p>查看项目文件状态,提示了本地修改了哪些文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git status</div></pre></td></tr></table></figure></p>
-<p>把新增修改的文件到暂存区<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add -A</div></pre></td></tr></table></figure></p>
-<p>添加备注git commit -m “备注说明”<br>更新git pull –rebase origin master<br>上传git push -u origin master</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>扎心了,老铁<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git命令</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">.gitignore</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://linxianshen.github.io/2017/04/07/gitcommand/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/08/gitignore/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          .gitignore配置
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/03/27/printpdf/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js生成网页pdf或打印的方法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="gitcommand" data-title="Git命令操作-上传文件到github仓库" data-url="https://linxianshen.github.io/2017/04/07/gitcommand/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"linxianshen"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -375,9 +244,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

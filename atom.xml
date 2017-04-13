@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linxianshen.github.io/"/>
-  <updated>2017-04-07T06:55:16.000Z</updated>
+  <updated>2017-04-13T08:03:25.000Z</updated>
   <id>https://linxianshen.github.io/</id>
   
   <author>
@@ -14,6 +14,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>input输入框校对气泡插件的实现</title>
+    <link href="https://linxianshen.github.io/2017/04/13/inputtip/"/>
+    <id>https://linxianshen.github.io/2017/04/13/inputtip/</id>
+    <published>2017-04-13T04:00:41.000Z</published>
+    <updated>2017-04-13T08:03:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>啊…这是上次清明回家上网买车票是看到的一个input显示插件,感觉比较常用的.实现起来也不难, 就想着抽空也来写一个类似的气泡弹框插件.</p>
+<p>清明到现在也鸽了这么久了, 找了个时间现在来分享一下实现的步骤…</p>
+<p>代码在这:<a href="https://github.com/linxianshen/inputtip" target="_blank" rel="external">github</a></p>
+<a id="more"></a>
+<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><p>思路类似. 参考之前的placeholder属性打字效果<strong>superplaceholder</strong>: <a href="https://linxianshen.github.io/2017/03/17/placeholder/">传送门</a></p>
+<p>整体的思路也就是前端调用tipInput()方法去生成一个气泡Div, 并且要相对需要此功能的input的种种属性.</p>
+<p>因此在这里就直接将input的id作为参数, 调用气泡生成的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tipInput(&#123;el: tip&#125;)  //tip为input的id</div></pre></td></tr></table></figure></p>
+<p>校验传的参数是否input元素并且是text属性的输入框<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var tipInput = <span class="keyword">function</span>(params) &#123;</div><div class="line">    <span class="keyword">if</span> (params.el.tagName == <span class="string">'INPUT'</span> &amp;&amp; params.el.type == <span class="string">'text'</span>) &#123; //判断元素是否为input text的</div><div class="line">        new InputTip(params.el);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接下来的操作基本都是对获取到的input#tip元素的属性的应用<br><img src="/img/el.png" alt="input"></p>
+<hr>
+<p>在createTipDiv方法中,主要的操作就是, 动态生成tipwrap内容节点, 并赋予宽高, 定位等属性.<br>在创建成功之后,为input添加focus, blur以及keyup键盘事件, 来控制tipwrap的显示与否</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> InputTip(el) &#123;</div><div class="line">    this.el = el;</div><div class="line">    this.createTipDiv();   //create the tip based on input elem </div><div class="line">&#125;</div><div class="line"></div><div class="line">//create tipwrap div</div><div class="line">InputTip.prototype.createTipDiv = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="built_in">let</span> self = this;</div><div class="line">    <span class="built_in">let</span> elem = document.createElement(<span class="string">"div"</span>);</div><div class="line">    elem.id = <span class="string">'tipwrap'</span>;</div><div class="line">    elem.style = <span class="string">'position: absolute;color: black;top:'</span> + (self.el.offsetTop - self.el.clientHeight - 14) + <span class="string">'px;left:'</span> + self.el.offsetLeft + <span class="string">'px;'</span>;</div><div class="line">    elem.hidden = <span class="literal">true</span>; //begin hidden</div><div class="line">    elem.innerHTML = <span class="string">"&lt;div id='rect' style='background: #eee;border-radius: 4px;padding: 4px;font-size:"</span> + (self.el.size + 2) + <span class="string">"px;height:"</span> + self.el.clientHeight + <span class="string">"px;min-width:"</span> + self.el.clientWidth + <span class="string">"px;'&gt;&lt;/div&gt;&lt;span id='triangle' style='display: block;margin-left:"</span> + (self.el.clientWidth / 10) + <span class="string">"px;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #eee;'&gt;&lt;/span&gt;"</span>;</div><div class="line">    self.el.parentElement.appendChild(elem);</div><div class="line">    self.el.addEventListener(<span class="string">'focus'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        <span class="keyword">if</span> (self.el.value) &#123;</div><div class="line">            elem.hidden = <span class="literal">false</span>;   //show tipwrap</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    self.el.addEventListener(<span class="string">'blur'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        elem.hidden = <span class="literal">true</span>;   // hide tipwrap</div><div class="line">    &#125;);</div><div class="line">    self.el.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        self.textShowRealTime(elem); //show <span class="keyword">in</span> time </div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p>input的keyup事件, 就是每次按下都去重新给气泡上的内容赋值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//show <span class="keyword">in</span> time when keyup event</div><div class="line">InputTip.prototype.textShowRealTime = <span class="keyword">function</span>(elem) &#123;</div><div class="line">    <span class="built_in">let</span> self = this;</div><div class="line">    <span class="built_in">let</span> tipNode = document.getElementById(<span class="string">"triangle"</span>);</div><div class="line">    <span class="keyword">if</span> (self.el.value) &#123;</div><div class="line">        elem.hidden = <span class="literal">false</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        elem.hidden = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    elem.children[0].innerHTML = self.el.value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/img/inputtip.gif" alt="效果"></p>
+<p>跟头像一样丑是丑了点, 客观将就看看吧…</p>
+<p>哦, 还有, 剧透一下人民的名义, o(*≧▽≦)ツ┏━┓铁胆神侯朱无视才是最大boss.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h3&gt;&lt;p&gt;啊…这是上次清明回家上网买车票是看到的一个input显示插件,感觉比较常用的.实现起来也不难, 就想着抽空也来写一个类似的气泡弹框插件.&lt;/p&gt;
+&lt;p&gt;清明到现在也鸽了这么久了, 找了个时间现在来分享一下实现的步骤…&lt;/p&gt;
+&lt;p&gt;代码在这:&lt;a href=&quot;https://github.com/linxianshen/inputtip&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javaScript" scheme="https://linxianshen.github.io/tags/javaScript/"/>
+    
+      <category term="input" scheme="https://linxianshen.github.io/tags/input/"/>
+    
+      <category term="气泡" scheme="https://linxianshen.github.io/tags/%E6%B0%94%E6%B3%A1/"/>
+    
+      <category term="plugin" scheme="https://linxianshen.github.io/tags/plugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.gitignore配置</title>
+    <link href="https://linxianshen.github.io/2017/04/08/gitignore/"/>
+    <id>https://linxianshen.github.io/2017/04/08/gitignore/</id>
+    <published>2017-04-08T09:08:06.000Z</published>
+    <updated>2017-04-08T06:23:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>有些时候你必须把某些文件放到Git工作目录当中, 但是又不能提交他们.</p>
+<p>当然Git也为了我们提供了解决方法, 我们可以在git工作区的根目录下,创建一个特殊的.gitignore文件, 然后讲我们要忽略的文件名填进去, Git就会自动忽略这些文件</p>
+<a id="more"></a>
+<p>忽略文件的原则:</p>
+<blockquote>
+<p><strong>1:</strong> 忽略操作系统自动生成的文件，比如缩略图等;<br>  <strong>2:</strong> 忽略你自己的带有敏感信息的配置文件，比如存放口令的配置文件。<br>  <strong>3:</strong> 忽略某些通过某些文件自动生成的, 那么自动生成的文件就没必要放进版本库</p>
+</blockquote>
+<p>比如一些在工作目录中的安装的依赖模块, 是根据package.json来生成的, 就没必要放入版本库</p>
+<p>进入项目文件, touch .gitignore创建文件</p>
+<p>并进行配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">node-modules/</div><div class="line">*.py          //表示忽略所有py文件, *通配多个字符</div><div class="line">fold/         //表示 fold文件夹下的所有文件都忽略, 这个fold文件夹不管是在根目录下,还是某个文件夹的子目录下,都会被忽略</div><div class="line"></div><div class="line">/fold/        //表示根目录下的fold目录的全部内容</div><div class="line"></div><div class="line">/*</div><div class="line">!/fold        //表示忽略全部内容, 不忽略根目录下的fold文件夹</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有些时候你必须把某些文件放到Git工作目录当中, 但是又不能提交他们.&lt;/p&gt;
+&lt;p&gt;当然Git也为了我们提供了解决方法, 我们可以在git工作区的根目录下,创建一个特殊的.gitignore文件, 然后讲我们要忽略的文件名填进去, Git就会自动忽略这些文件&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://linxianshen.github.io/tags/git/"/>
+    
+      <category term=".gitignore" scheme="https://linxianshen.github.io/tags/gitignore/"/>
+    
+  </entry>
   
   <entry>
     <title>Git命令操作-上传文件到github仓库</title>
@@ -195,7 +274,7 @@
     <link href="https://linxianshen.github.io/2017/03/17/placeholder/"/>
     <id>https://linxianshen.github.io/2017/03/17/placeholder/</id>
     <published>2017-03-17T07:35:20.000Z</published>
-    <updated>2017-03-18T02:50:17.000Z</updated>
+    <updated>2017-04-13T06:45:37.000Z</updated>
     
     <content type="html"><![CDATA[<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86   
     src="http://music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66">  
