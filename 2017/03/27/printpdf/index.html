@@ -14,12 +14,12 @@
 <meta property="og:url" content="https://linxianshen.github.io/2017/03/27/printpdf/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
 <meta property="og:description" content="浏览器网页中点击鼠标右键, 有打印操作, 但是这样会把整个网页的内容都包含到pdf里面.现在有个需求, 就是要将网页中的某一块div里面的内容生成pdf, 另存为或者打印.">
-<meta property="og:image" content="https://linxianshen.github.io/img/createpdf.png">
-<meta property="og:updated_time" content="2017-03-27T10:04:15.000Z">
+<meta property="og:image" content="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/createpdf.png">
+<meta property="og:updated_time" content="2017-04-25T03:01:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js生成网页pdf或打印的方法">
 <meta name="twitter:description" content="浏览器网页中点击鼠标右键, 有打印操作, 但是这样会把整个网页的内容都包含到pdf里面.现在有个需求, 就是要将网页中的某一块div里面的内容生成pdf, 另存为或者打印.">
-<meta name="twitter:image" content="https://linxianshen.github.io/img/createpdf.png">
+<meta name="twitter:image" content="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/createpdf.png">
   
     <link rel="alternative" href="/atom.xml" title="CSL&#39;S BLOG" type="application/atom+xml">
   
@@ -48,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/img/headerimg.png" class="js-avatar">
+			<img src="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/headerimg.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">蔡双临</a></h1>
@@ -110,7 +110,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/img/headerimg.png" class="js-avatar">
+				<img src="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/headerimg.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">蔡双临</h1>
@@ -189,7 +189,7 @@
 <a id="more"></a>
 <p>好.直接上代码吧.主要就是js的document对象的使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var createPdf = () =&gt; &#123;</div><div class="line">	<span class="built_in">let</span> newWindow = window.open(<span class="string">"_blank"</span>);   //打开新窗口</div><div class="line">	<span class="built_in">let</span> codestr = document.getElementById(<span class="string">"pdf-wrap"</span>).innerHTML;   //获取需要生成pdf页面的div代码</div><div class="line">    newWindow.document.write(codestr);   //向文档写入HTML表达式或者JavaScript代码</div><div class="line">    newWindow.document.close();     //关闭document的输出流, 显示选定的数据</div><div class="line">    newWindow.print();   //打印当前窗口</div><div class="line">    <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>调用成功会弹出打印或保存pdf的窗口<br><img src="/img/createpdf.png" alt="调用成功"></p>
+<p>调用成功会弹出打印或保存pdf的窗口<br><img src="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/createpdf.png" alt="调用成功"></p>
 <p>打印的文档可以自由拼接…自己去网页上瞎jb存pdf吧.</p>
 
       

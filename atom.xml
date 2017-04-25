@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linxianshen.github.io/"/>
-  <updated>2017-04-13T10:10:06.000Z</updated>
+  <updated>2017-04-25T03:02:32.000Z</updated>
   <id>https://linxianshen.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://linxianshen.github.io/2017/04/13/inputtip/"/>
     <id>https://linxianshen.github.io/2017/04/13/inputtip/</id>
     <published>2017-04-13T04:00:41.000Z</published>
-    <updated>2017-04-13T10:10:06.000Z</updated>
+    <updated>2017-04-25T03:02:32.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>啊…这是上次清明回家上网买车票是看到的一个input显示插件,感觉比较常用的.实现起来也不难, 就想着抽空也来写一个类似的气泡弹框插件.</p>
 <p>清明到现在也鸽了这么久了, 找了个时间现在来分享一下实现的步骤…</p>
@@ -30,14 +30,14 @@
 <p>整体的思路也就是前端调用tipInput()方法去生成一个气泡Div, 并且要相对需要此功能的input的种种属性.</p>
 <p>因此在这里就直接将input的id作为参数, 调用气泡生成的方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tipInput(&#123;el: tip&#125;)  //tip为input的id</div></pre></td></tr></table></figure></p>
 <p>校验传的参数是否input元素并且是text属性的输入框<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var tipInput = <span class="keyword">function</span>(params) &#123;</div><div class="line">    <span class="keyword">if</span> (params.el.tagName == <span class="string">'INPUT'</span> &amp;&amp; params.el.type == <span class="string">'text'</span>) &#123; //判断元素是否为input text的</div><div class="line">        new InputTip(params.el);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">return</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接下来的操作基本都是对获取到的input#tip元素的属性的应用<br><img src="/img/el.jpeg" alt="input"></p>
+<p>接下来的操作基本都是对获取到的input#tip元素的属性的应用<br><img src="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/el.png" alt="input"></p>
 <hr>
 <p>在createTipDiv方法中,主要的操作就是, 动态生成tipwrap内容节点, 并赋予宽高, 定位等属性.<br>在创建成功之后,为input添加focus, blur以及keyup键盘事件, 来控制tipwrap的显示与否.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> InputTip(el) &#123;</div><div class="line">    this.el = el;</div><div class="line">    this.createTipDiv();   //create the tip based on input elem </div><div class="line">&#125;</div><div class="line"></div><div class="line">//create tipwrap div</div><div class="line">InputTip.prototype.createTipDiv = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="built_in">let</span> self = this;</div><div class="line">    <span class="built_in">let</span> elem = document.createElement(<span class="string">"div"</span>);</div><div class="line">    elem.id = <span class="string">'tipwrap'</span>;</div><div class="line">    //safari不支持这个写法的</div><div class="line">    // elem.style = <span class="string">'position: absolute;color: black;top:'</span> + (self.el.offsetTop - self.el.clientHeight - 14) + <span class="string">'px;left:'</span> + self.el.offsetLeft + <span class="string">'px;'</span>;</div><div class="line">    elem.style.position = <span class="string">'absolute'</span>;</div><div class="line">    elem.style.color = <span class="string">"black"</span>;</div><div class="line">    elem.style.top = self.el.offsetTop - self.el.clientHeight - 14 + <span class="string">'px'</span>;</div><div class="line">    elem.style.left = self.el.offsetLeft + <span class="string">'px'</span>;</div><div class="line">    elem.hidden = <span class="literal">true</span>; //begin hidden</div><div class="line">    elem.innerHTML = <span class="string">"&lt;div id='rect' style='background: #eee;border-radius: 4px;padding: 4px;font-size:"</span> + (self.el.offsetHeight - 6) + <span class="string">"px;height:"</span> + self.el.clientHeight + <span class="string">"px;min-width:"</span> + self.el.clientWidth + <span class="string">"px;'&gt;&lt;/div&gt;&lt;span id='triangle' style='display: block;margin-left:"</span> + (self.el.clientWidth / 10) + <span class="string">"px;width: 0;height: 0;border-left: 5px solid transparent;border-right: 5px solid transparent;border-top: 5px solid #eee;'&gt;&lt;/span&gt;"</span>;</div><div class="line">    self.el.parentElement.appendChild(elem);</div><div class="line">    self.el.addEventListener(<span class="string">'focus'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        <span class="keyword">if</span> (self.el.value) &#123;</div><div class="line">            elem.hidden = <span class="literal">false</span>;   //show tipwrap</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    self.el.addEventListener(<span class="string">'blur'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        elem.hidden = <span class="literal">true</span>;   // hide tipwrap</div><div class="line">    &#125;);</div><div class="line">    self.el.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        self.textShowRealTime(elem); //show <span class="keyword">in</span> time </div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
 <p>input的keyup事件, 就是每次按下都去重新给气泡上的内容赋值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//show <span class="keyword">in</span> time when keyup event</div><div class="line">InputTip.prototype.textShowRealTime = <span class="keyword">function</span>(elem) &#123;</div><div class="line">    <span class="built_in">let</span> self = this;</div><div class="line">    <span class="built_in">let</span> tipNode = document.getElementById(<span class="string">"triangle"</span>);</div><div class="line">    <span class="keyword">if</span> (self.el.value) &#123;</div><div class="line">        elem.hidden = <span class="literal">false</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        elem.hidden = <span class="literal">true</span>;</div><div class="line">    &#125;</div><div class="line">    elem.children[0].innerHTML = self.el.value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/img/inputtip.gif" alt="效果"></p>
+<p><img src="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/inputtip.gif" alt="效果"></p>
 <p>跟头像一样丑是丑了点, 客官将就看看吧…</p>
 <p>哦, 还有, 剧透一下人民的名义, o(*≧▽≦)ツ┏━┓铁胆神侯朱无视才是最大boss.</p>
 ]]></content>
@@ -133,13 +133,13 @@
     <link href="https://linxianshen.github.io/2017/03/27/printpdf/"/>
     <id>https://linxianshen.github.io/2017/03/27/printpdf/</id>
     <published>2017-03-27T08:59:41.000Z</published>
-    <updated>2017-03-27T10:04:15.000Z</updated>
+    <updated>2017-04-25T03:01:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>浏览器网页中点击鼠标右键, 有打印操作, 但是这样会把整个网页的内容都包含到pdf里面.<br>现在有个需求, 就是要将网页中的某一块div里面的内容生成pdf, 另存为或者打印.</p>
 <a id="more"></a>
 <p>好.直接上代码吧.主要就是js的document对象的使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var createPdf = () =&gt; &#123;</div><div class="line">	<span class="built_in">let</span> newWindow = window.open(<span class="string">"_blank"</span>);   //打开新窗口</div><div class="line">	<span class="built_in">let</span> codestr = document.getElementById(<span class="string">"pdf-wrap"</span>).innerHTML;   //获取需要生成pdf页面的div代码</div><div class="line">    newWindow.document.write(codestr);   //向文档写入HTML表达式或者JavaScript代码</div><div class="line">    newWindow.document.close();     //关闭document的输出流, 显示选定的数据</div><div class="line">    newWindow.print();   //打印当前窗口</div><div class="line">    <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>调用成功会弹出打印或保存pdf的窗口<br><img src="/img/createpdf.png" alt="调用成功"></p>
+<p>调用成功会弹出打印或保存pdf的窗口<br><img src="http://ximencai.oss-cn-shanghai.aliyuncs.com/image/createpdf.png" alt="调用成功"></p>
 <p>打印的文档可以自由拼接…自己去网页上瞎jb存pdf吧.</p>
 ]]></content>
     
