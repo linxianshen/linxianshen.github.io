@@ -99,7 +99,7 @@
     <link href="https://linxianshen.github.io/2017/04/07/gitcommand/"/>
     <id>https://linxianshen.github.io/2017/04/07/gitcommand/</id>
     <published>2017-04-07T06:17:41.000Z</published>
-    <updated>2017-04-07T06:55:16.000Z</updated>
+    <updated>2017-05-03T08:21:34.000Z</updated>
     
     <content type="html"><![CDATA[<p>作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.<br>那么如何将本地的项目文件上传至github上呢.</p>
 <p>如果是首次上传项目文件则:<br>先进入文件夹, 通过git init把这个目录变成git可以管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
