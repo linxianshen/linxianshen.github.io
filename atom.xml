@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linxianshen.github.io/"/>
-  <updated>2017-04-25T03:24:17.000Z</updated>
+  <updated>2017-06-07T03:14:51.000Z</updated>
   <id>https://linxianshen.github.io/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>note0508(五月)</title>
+    <link href="https://linxianshen.github.io/2017/05/08/worknote0508/"/>
+    <id>https://linxianshen.github.io/2017/05/08/worknote0508/</id>
+    <published>2017-05-08T03:59:09.000Z</published>
+    <updated>2017-06-07T03:14:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.on(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="2-css中的背景图定位扩展"><a href="#2-css中的背景图定位扩展" class="headerlink" title="2.css中的背景图定位扩展"></a>2.css中的背景图定位扩展</h3><p>background-position: 20px 20px; 是根据元素左上角开始定位的.<br>那么如何将背景图相对元素右上角定位, 并且能准确的给予距离右边多少px<br>这里有个小tip:<br>可以跟border结合使用, border-right: 20px solid transparent; background-position: 100% 20px;<br>这样得到的效果就是背景图定位在距离元素右侧20px的位置;</p>
+<a id="more"></a>
+<h3 id="3-微信开发中-设置标题"><a href="#3-微信开发中-设置标题" class="headerlink" title="3.微信开发中, 设置标题"></a>3.微信开发中, 设置标题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 修改微信 title</div><div class="line"><span class="keyword">function</span> <span class="built_in">set</span>WechatTitle(title) &#123;</div><div class="line">    var <span class="variable">$body</span> = $(<span class="string">'body'</span>)</div><div class="line">    document.title = title;</div><div class="line">    // hack在微信等webview中无法修改document.title的情况</div><div class="line">    var <span class="variable">$iframe</span> = $(<span class="string">'&lt;iframe src="/favicon.ico"&gt;&lt;/iframe&gt;'</span>).on(<span class="string">'load'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">            <span class="variable">$iframe</span>.off(<span class="string">'load'</span>).remove()</div><div class="line">        &#125;, 0)</div><div class="line">    &#125;).appendTo(<span class="variable">$body</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用setWechatTitle()就ok了.</p>
+<h3 id="4-js中的变量提升"><a href="#4-js中的变量提升" class="headerlink" title="4.js中的变量提升"></a>4.js中的变量提升</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var name = <span class="string">'csl'</span>;</div><div class="line">(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	alert(name);    //undefined</div><div class="line">	var name = <span class="string">'pickup'</span>;</div><div class="line">	alert(name);    //pickup</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<p>在自执行函数中,第一个name是因为函数中的变量提升了,如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var name = <span class="string">'csl'</span>;</div><div class="line">(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	var name;</div><div class="line">	alert(name);    //undefined</div><div class="line">	name = <span class="string">'pickup'</span>;</div><div class="line">	alert(name);    //pickup</div><div class="line">&#125;)();</div></pre></td></tr></table></figure></p>
+<h3 id="5-避免连续点击按钮-重复请求"><a href="#5-避免连续点击按钮-重复请求" class="headerlink" title="5.避免连续点击按钮.重复请求"></a>5.避免连续点击按钮.重复请求</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">app.config([<span class="string">'$provide'</span>, <span class="keyword">function</span> (<span class="variable">$provide</span>) &#123;</div><div class="line">        <span class="variable">$provide</span>.decorator(<span class="string">'ngClickDirective'</span>,[<span class="string">'$delegate'</span>,<span class="string">'$timeout'</span>, <span class="keyword">function</span> (<span class="variable">$delegate</span>,<span class="variable">$timeout</span>) &#123;</div><div class="line">            var original = <span class="variable">$delegate</span>[0].compile;</div><div class="line">                  var delay = 1000;</div><div class="line">            <span class="variable">$delegate</span>[0].compile = <span class="keyword">function</span> (element, attrs, transclude) &#123;</div><div class="line"></div><div class="line">                var disabled = <span class="literal">false</span>;</div><div class="line">                <span class="keyword">function</span> onClick(evt) &#123;</div><div class="line">                    <span class="keyword">if</span> (disabled) &#123;</div><div class="line">                        evt.preventDefault();</div><div class="line">                        evt.stopImmediatePropagation();</div><div class="line">                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                        disabled = <span class="literal">true</span>;</div><div class="line">                        <span class="variable">$timeout</span>(<span class="function"><span class="title">function</span></span> () &#123; disabled = <span class="literal">false</span>; &#125;, delay, <span class="literal">false</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                //   scope.<span class="variable">$on</span>(<span class="string">'$destroy'</span>, <span class="function"><span class="title">function</span></span> () &#123; iElement.off(<span class="string">'click'</span>, onClick); &#125;);</div><div class="line">                element.on(<span class="string">'click'</span>, onClick);</div><div class="line"></div><div class="line">                <span class="built_in">return</span> original(element, attrs, transclude);</div><div class="line">            &#125;;</div><div class="line">            <span class="built_in">return</span> <span class="variable">$delegate</span>;</div><div class="line">        &#125;]);</div><div class="line">    &#125;])</div></pre></td></tr></table></figure>
+<h3 id="6-sql语句-查询出来的字段拼接CONCAT-函数"><a href="#6-sql语句-查询出来的字段拼接CONCAT-函数" class="headerlink" title="6.sql语句,查询出来的字段拼接CONCAT()函数"></a>6.sql语句,查询出来的字段拼接CONCAT()函数</h3><p>①.CONCAT(str1, str2, …)  返回为连接参数产生的字符串.但是只要有一个参数为null, 最后拼接返回的结果也为null</p>
+<p>②.CONCAT_WS(separator, str1, str2, …) 函数的字面意思就是concat width separator, 按分隔符来拼接字符串. 该函数不会忽律任何空字符串.</p>
+<blockquote>
+<p><strong>example:</strong> CONCAT_WS(‘,’,’First name’,NULL,’Last Name’)   —&gt;   First name,Last Name</p>
+</blockquote>
+<p>③.GROUP_CONCAT() 分组查询出来的结果拼接而成</p>
+<blockquote>
+<p><strong>example:</strong> GROUP_CONCAT(id separator ‘,’)   —&gt;   分组查询出来的所有id拼接<br>               GROUP_CONCAT(CONCAT_WS(‘,’,id,name) separator ‘.’)   —&gt;   先拼接对应的id和name , 再拼接分组<br><strong>ps:</strong> GROUP_CONCAT()函数中也可以使用distinct, order by, desc等等条件</p>
+</blockquote>
+<h3 id="7-关于setTimeout的参数问题和es6的promise"><a href="#7-关于setTimeout的参数问题和es6的promise" class="headerlink" title="7.关于setTimeout的参数问题和es6的promise"></a>7.关于setTimeout的参数问题和es6的promise</h3><p>在看es6文档的promise时, 突然看到setTimeout出现了三个参数, 一下没反应过来. 后来又查了一下, 发现setTimeout前两个参数肯定是一个function和delay, 至于第三个以及后面的参数都是可以作为setTimeout中的function函数的参数.<br>首先来看一下, es6文档中的代码, 一个简单的promise对象的例子<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> timeout(ms) &#123;</div><div class="line">  <span class="built_in">return</span> new Promise((resolve, reject) =&gt; &#123;</div><div class="line">    <span class="built_in">set</span>Timeout(resolve, ms, <span class="string">'done'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">timeout(100).then((value) =&gt; &#123;</div><div class="line">  console.log(value);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>可见, timeout方法返回一个Promise实例, 表示一段时间后发生, 实例状态变化为resolved, 就会触发then方法, 此处’done’就是作为参数进入到resolve方法中的.<br>then完整是这样的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Promise.resolve(<span class="string">'Success'</span>).then(<span class="keyword">function</span>(value)&#123;</div><div class="line">	console.log(value); //Success</div><div class="line">&#125;, <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	//不会被调用</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>Promise.resolve返回一个promise对象，这个promise对象是被解析后（resolved）的.</p>
+<p>Promise.resolve传的参数可以是value, promise对象, 还可以是thenable(带有then的方法).ps:可玩性很高</p>
+<p>参见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve" target="_blank" rel="external">MDN Promise</a>和<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="external">es6 阮一峰</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等&quot;&gt;&lt;a href=&quot;#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等&quot; class=&quot;headerlink&quot; title=&quot;1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等&quot;&gt;&lt;/a&gt;1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$scope&lt;/span&gt;.on(&lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$stateChangeStart&lt;/span&gt;&quot;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(event, toState, toParams, fromState, fromParams)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	//&lt;span class=&quot;keyword&quot;&gt;do&lt;/span&gt; something&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;2-css中的背景图定位扩展&quot;&gt;&lt;a href=&quot;#2-css中的背景图定位扩展&quot; class=&quot;headerlink&quot; title=&quot;2.css中的背景图定位扩展&quot;&gt;&lt;/a&gt;2.css中的背景图定位扩展&lt;/h3&gt;&lt;p&gt;background-position: 20px 20px; 是根据元素左上角开始定位的.&lt;br&gt;那么如何将背景图相对元素右上角定位, 并且能准确的给予距离右边多少px&lt;br&gt;这里有个小tip:&lt;br&gt;可以跟border结合使用, border-right: 20px solid transparent; background-position: 100% 20px;&lt;br&gt;这样得到的效果就是背景图定位在距离元素右侧20px的位置;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javaScript" scheme="https://linxianshen.github.io/tags/javaScript/"/>
+    
+      <category term="angular" scheme="https://linxianshen.github.io/tags/angular/"/>
+    
+      <category term="工作笔记" scheme="https://linxianshen.github.io/tags/%E5%B7%A5%E4%BD%9C%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="学习笔记" scheme="https://linxianshen.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>input输入框校对气泡插件的实现</title>
@@ -66,7 +115,7 @@
     <link href="https://linxianshen.github.io/2017/04/08/gitignore/"/>
     <id>https://linxianshen.github.io/2017/04/08/gitignore/</id>
     <published>2017-04-08T09:08:06.000Z</published>
-    <updated>2017-04-08T06:23:25.000Z</updated>
+    <updated>2017-06-07T02:00:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>有些时候你必须把某些文件放到Git工作目录当中, 但是又不能提交他们.</p>
 <p>当然Git也为了我们提供了解决方法, 我们可以在git工作区的根目录下,创建一个特殊的.gitignore文件, 然后讲我们要忽略的文件名填进去, Git就会自动忽略这些文件</p>
@@ -274,7 +323,7 @@
     <link href="https://linxianshen.github.io/2017/03/17/placeholder/"/>
     <id>https://linxianshen.github.io/2017/03/17/placeholder/</id>
     <published>2017-03-17T07:35:20.000Z</published>
-    <updated>2017-04-13T06:45:37.000Z</updated>
+    <updated>2017-05-24T09:15:46.000Z</updated>
     
     <content type="html"><![CDATA[<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86   
     src="http://music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66">  
