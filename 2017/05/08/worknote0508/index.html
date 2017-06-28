@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://linxianshen.github.io">
   <title>note0508(五月) | CSL&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等123$scope.on(&quot;$stateChangeStart&quot;, function(event, toState, toParams, fromState, fromParams)&amp;#123;	//do something&amp;#125;)
-2.css中的背景图定位扩展background-posi">
+  <meta name="description" content="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等123$scope.$on(&quot;$stateChangeStart&quot;, function(event, toState, toParams, fromState, fromParams)&amp;#123;	//do something&amp;#125;)
+2.css中的背景图定位扩展background-pos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="note0508(五月)">
 <meta property="og:url" content="https://linxianshen.github.io/2017/05/08/worknote0508/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
-<meta property="og:description" content="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等123$scope.on(&quot;$stateChangeStart&quot;, function(event, toState, toParams, fromState, fromParams)&amp;#123;	//do something&amp;#125;)
-2.css中的背景图定位扩展background-posi">
-<meta property="og:updated_time" content="2017-06-07T03:14:51.000Z">
+<meta property="og:description" content="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等123$scope.$on(&quot;$stateChangeStart&quot;, function(event, toState, toParams, fromState, fromParams)&amp;#123;	//do something&amp;#125;)
+2.css中的背景图定位扩展background-pos">
+<meta property="og:updated_time" content="2017-06-19T10:03:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="note0508(五月)">
-<meta name="twitter:description" content="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等123$scope.on(&quot;$stateChangeStart&quot;, function(event, toState, toParams, fromState, fromParams)&amp;#123;	//do something&amp;#125;)
-2.css中的背景图定位扩展background-posi">
+<meta name="twitter:description" content="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等123$scope.$on(&quot;$stateChangeStart&quot;, function(event, toState, toParams, fromState, fromParams)&amp;#123;	//do something&amp;#125;)
+2.css中的背景图定位扩展background-pos">
   
     <link rel="alternative" href="/atom.xml" title="CSL&#39;S BLOG" type="application/atom+xml">
   
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.on(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+        <h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h3 id="2-css中的背景图定位扩展"><a href="#2-css中的背景图定位扩展" class="headerlink" title="2.css中的背景图定位扩展"></a>2.css中的背景图定位扩展</h3><p>background-position: 20px 20px; 是根据元素左上角开始定位的.<br>那么如何将背景图相对元素右上角定位, 并且能准确的给予距离右边多少px<br>这里有个小tip:<br>可以跟border结合使用, border-right: 20px solid transparent; background-position: 100% 20px;<br>这样得到的效果就是背景图定位在距离元素右侧20px的位置;</p>
 <a id="more"></a>
 <h3 id="3-微信开发中-设置标题"><a href="#3-微信开发中-设置标题" class="headerlink" title="3.微信开发中, 设置标题"></a>3.微信开发中, 设置标题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 修改微信 title</div><div class="line"><span class="keyword">function</span> <span class="built_in">set</span>WechatTitle(title) &#123;</div><div class="line">    var <span class="variable">$body</span> = $(<span class="string">'body'</span>)</div><div class="line">    document.title = title;</div><div class="line">    // hack在微信等webview中无法修改document.title的情况</div><div class="line">    var <span class="variable">$iframe</span> = $(<span class="string">'&lt;iframe src="/favicon.ico"&gt;&lt;/iframe&gt;'</span>).on(<span class="string">'load'</span>, <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">            <span class="variable">$iframe</span>.off(<span class="string">'load'</span>).remove()</div><div class="line">        &#125;, 0)</div><div class="line">    &#125;).appendTo(<span class="variable">$body</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -208,7 +208,7 @@
 <p>Promise.resolve返回一个promise对象，这个promise对象是被解析后（resolved）的.</p>
 <p>Promise.resolve传的参数可以是value, promise对象, 还可以是thenable(带有then的方法).ps:可玩性很高</p>
 <p>参见<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve" target="_blank" rel="external">MDN Promise</a>和<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="external">es6 阮一峰</a></p>
-
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3>
       
 
       
@@ -382,6 +382,18 @@
     </div>
   </div>
 </footer>
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "f6fb61a0b9a9445b89373efd858c4e3a",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -489,11 +501,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,14 +526,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">天气</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>

@@ -181,7 +181,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.on(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+        <h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h3 id="2-css中的背景图定位扩展"><a href="#2-css中的背景图定位扩展" class="headerlink" title="2.css中的背景图定位扩展"></a>2.css中的背景图定位扩展</h3><p>background-position: 20px 20px; 是根据元素左上角开始定位的.<br>那么如何将背景图相对元素右上角定位, 并且能准确的给予距离右边多少px<br>这里有个小tip:<br>可以跟border结合使用, border-right: 20px solid transparent; background-position: 100% 20px;<br>这样得到的效果就是背景图定位在距离元素右侧20px的位置;</p>
         
           <a class="article-more-a" href="/2017/05/08/worknote0508/#more">more >></a>
@@ -869,6 +869,7 @@
   
 
 
+
           </div>
         </div>
       </div>
@@ -889,6 +890,18 @@
     </div>
   </div>
 </footer>
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "f6fb61a0b9a9445b89373efd858c4e3a",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -996,11 +1009,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">placeholder</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1013,14 +1034,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">天气</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
