@@ -183,6 +183,8 @@
       
         <p>在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.</p>
 <p>文档地址: <a href="https://vuejs-templates.github.io/webpack/proxy.html">https://vuejs-templates.github.io/webpack/proxy.html</a></p>
+<p>在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,<br>这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  // proxy all requests starting with /api to jsonplaceholder</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    target: <span class="string">'http://163.opdays.com'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2017/07/24/webpackproxy/#more">more >></a>
         
@@ -217,57 +219,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/24/webpackproxy/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-csssecrets" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/03/csssecrets/">CSS Secrets(CSS揭秘) 读书笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/03/csssecrets/" class="archive-article-date">
-  	<time datetime="2017-07-03T08:03:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/03/csssecrets/">展开全文 >></a>
         </p>
       
 
@@ -866,6 +817,81 @@
 
 
   
+    <article id="post-placeholder" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/17/placeholder/">input的placeholder打字效果的实现</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/17/placeholder/" class="archive-article-date">
+  	<time datetime="2017-03-17T07:35:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86   
+    src="http://music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66">  
+</iframe>  -->
+<p>看到一个轻量级js插件,蛮有意思的.(主要是上次出去面试有点受刺激,第四轮架构师大神,问的问题其实很基本,但是自己就是没答上来,真的挺可惜,不过面试题目还像也可以写一篇分享一下==…建议多去看看github上的各位大牛的代码,学习吧骚年)</p>
+<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p><strong>superplaceholder.js</strong>: <a href="https://github.com/chinchang/superplaceholder.js">github</a></p>
+<h2 id="1-打字效果实现原理"><a href="#1-打字效果实现原理" class="headerlink" title="1.  打字效果实现原理"></a>1.  打字效果实现原理</h2><p>模拟打字效果的实现,其实就是主要是定时器的工作了,只要根据提供的<strong>texts</strong>(placeholder值的数组),<strong>textDelay</strong>(切换句子时的时间间隔),<strong>letterDelay</strong>(每打一个字的时间间隔),定时给input元素setAttribute <strong>placeholder</strong>属性.</p>
+<p>还要考虑到是否聚焦<strong>startOnFocus</strong>的时候开始执行该打字效果,是否循环<strong>loop</strong>,以及打字光标<strong>cursor</strong>.</p>
+        
+          <a class="article-more-a" href="/2017/03/17/placeholder/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">placeholder</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/17/placeholder/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -978,10 +1004,6 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -990,11 +1012,7 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color1">git命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1011,6 +1029,14 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">plugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,6 +1060,14 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -1043,14 +1077,6 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>

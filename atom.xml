@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linxianshen.github.io/"/>
-  <updated>2017-08-10T01:09:32.000Z</updated>
+  <updated>2017-08-10T01:11:17.000Z</updated>
   <id>https://linxianshen.github.io/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="https://linxianshen.github.io/2017/07/24/webpackproxy/"/>
     <id>https://linxianshen.github.io/2017/07/24/webpackproxy/</id>
     <published>2017-07-24T02:23:27.000Z</published>
-    <updated>2017-08-10T01:09:32.000Z</updated>
+    <updated>2017-08-10T01:11:17.000Z</updated>
     
     <content type="html"><![CDATA[<p>在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.</p>
 <p>文档地址: <a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">https://vuejs-templates.github.io/webpack/proxy.html</a></p>
-<a id="more"></a>
 <p>在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,<br>这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  // proxy all requests starting with /api to jsonplaceholder</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    target: <span class="string">'http://163.opdays.com'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>做了以上配置后, 当我们在请求中的参数写成”/api/playlist?id=317921676”,<br>即访问的是”<a href="http://163.opdays.com/playlist?id=317921676" target="_blank" rel="external">http://163.opdays.com/playlist?id=317921676</a>“</p>
 <p>这里changeOrigin的值为true的时候, 那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
 <p>vue-cli的这个设置其实是依赖于其使用的http-proxy-middleware插件, 仔细看vue的目录结构, 你会发现build下的dev-server.js下有写一些关于proxyTable的使用.详细的配置说明请参照github: <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">https://github.com/chimurai/http-proxy-middleware</a></p>
@@ -36,6 +36,8 @@
     
       &lt;p&gt;在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.&lt;/p&gt;
 &lt;p&gt;文档地址: &lt;a href=&quot;https://vuejs-templates.github.io/webpack/proxy.html&quot;&gt;https://vuejs-templates.github.io/webpack/proxy.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,&lt;br&gt;这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;proxyTable: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  // proxy all requests starting with /api to jsonplaceholder&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&#39;/api&#39;&lt;/span&gt;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    target: &lt;span class=&quot;string&quot;&gt;&#39;http://163.opdays.com&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    changeOrigin: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    pathRewrite: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&#39;^/api&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -45,20 +47,6 @@
       <category term="vue" scheme="https://linxianshen.github.io/tags/vue/"/>
     
       <category term="跨域" scheme="https://linxianshen.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS Secrets(CSS揭秘) 读书笔记</title>
-    <link href="https://linxianshen.github.io/2017/07/03/csssecrets/"/>
-    <id>https://linxianshen.github.io/2017/07/03/csssecrets/</id>
-    <published>2017-07-03T08:03:06.000Z</published>
-    <updated>2017-07-04T12:34:04.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

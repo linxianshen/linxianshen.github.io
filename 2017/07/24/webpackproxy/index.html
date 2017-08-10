@@ -9,18 +9,21 @@
   <title>vue下跨域设置 | CSL&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.
-文档地址: https://vuejs-templates.github.io/webpack/proxy.html">
+文档地址: https://vuejs-templates.github.io/webpack/proxy.html
+在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue下跨域设置">
 <meta property="og:url" content="https://linxianshen.github.io/2017/07/24/webpackproxy/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
 <meta property="og:description" content="在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.
-文档地址: https://vuejs-templates.github.io/webpack/proxy.html">
-<meta property="og:updated_time" content="2017-08-10T01:09:32.000Z">
+文档地址: https://vuejs-templates.github.io/webpack/proxy.html
+在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:">
+<meta property="og:updated_time" content="2017-08-10T01:11:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue下跨域设置">
 <meta name="twitter:description" content="在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.
-文档地址: https://vuejs-templates.github.io/webpack/proxy.html">
+文档地址: https://vuejs-templates.github.io/webpack/proxy.html
+在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:">
   
     <link rel="alternative" href="/atom.xml" title="CSL&#39;S BLOG" type="application/atom+xml">
   
@@ -188,9 +191,9 @@
       
         <p>在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.</p>
 <p>文档地址: <a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">https://vuejs-templates.github.io/webpack/proxy.html</a></p>
-<a id="more"></a>
 <p>在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,<br>这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  // proxy all requests starting with /api to jsonplaceholder</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    target: <span class="string">'http://163.opdays.com'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>做了以上配置后, 当我们在请求中的参数写成”/api/playlist?id=317921676”,<br>即访问的是”<a href="http://163.opdays.com/playlist?id=317921676" target="_blank" rel="external">http://163.opdays.com/playlist?id=317921676</a>“</p>
 <p>这里changeOrigin的值为true的时候, 那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
 <p>vue-cli的这个设置其实是依赖于其使用的http-proxy-middleware插件, 仔细看vue的目录结构, 你会发现build下的dev-server.js下有写一些关于proxyTable的使用.详细的配置说明请参照github: <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">https://github.com/chimurai/http-proxy-middleware</a></p>
@@ -308,8 +311,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/07/03/csssecrets/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS Secrets(CSS揭秘) 读书笔记</div>
+    <a href="/2017/05/08/worknote0508/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">note0508(五月)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -449,10 +452,6 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -461,11 +460,7 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color1">git命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -482,6 +477,14 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">plugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,6 +508,14 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
@@ -514,14 +525,6 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">工作笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
               </li>
             
             <div class="clearfix"></div>
