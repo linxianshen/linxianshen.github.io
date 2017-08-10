@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linxianshen.github.io/"/>
-  <updated>2017-06-19T10:03:05.000Z</updated>
+  <updated>2017-07-24T03:20:40.000Z</updated>
   <id>https://linxianshen.github.io/</id>
   
   <author>
@@ -16,11 +16,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue下跨域设置</title>
+    <link href="https://linxianshen.github.io/2017/07/24/webpackproxy/"/>
+    <id>https://linxianshen.github.io/2017/07/24/webpackproxy/</id>
+    <published>2017-07-24T02:23:27.000Z</published>
+    <updated>2017-07-24T03:20:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.</p>
+<p>文档地址: <a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">https://vuejs-templates.github.io/webpack/proxy.html</a></p>
+<p>在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,<br>这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  // proxy all requests starting with /api to jsonplaceholder</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    target: <span class="string">'http://163.opdays.com'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>做了以上配置后, 当我们在请求中的参数写成”/api/playlist?id=317921676”,<br>即访问的是”<a href="http://163.opdays.com/playlist?id=317921676" target="_blank" rel="external">http://163.opdays.com/playlist?id=317921676</a>“</p>
+<p>这里changeOrigin的值为true的时候, 那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
+<p>vue-cli的这个设置其实是依赖于其使用的http-proxy-middleware插件, 仔细看vue的目录结构, 你会发现build下的dev-server.js下有写一些关于proxyTable的使用.详细的配置说明请参照github: <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">https://github.com/chimurai/http-proxy-middleware</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.&lt;/p&gt;
+&lt;p&gt;文档地址: &lt;a href=&quot;https://vuejs-templates.github.io/webpack/proxy.html&quot; target=&quot;_blank&quot; rel=&quot;exter
+    
+    </summary>
+    
+    
+      <category term="webpack" scheme="https://linxianshen.github.io/tags/webpack/"/>
+    
+      <category term="vue" scheme="https://linxianshen.github.io/tags/vue/"/>
+    
+      <category term="跨域" scheme="https://linxianshen.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS Secrets(CSS揭秘) 读书笔记</title>
+    <link href="https://linxianshen.github.io/2017/07/03/csssecrets/"/>
+    <id>https://linxianshen.github.io/2017/07/03/csssecrets/</id>
+    <published>2017-07-03T08:03:06.000Z</published>
+    <updated>2017-07-04T12:34:04.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>note0508(五月)</title>
     <link href="https://linxianshen.github.io/2017/05/08/worknote0508/"/>
     <id>https://linxianshen.github.io/2017/05/08/worknote0508/</id>
     <published>2017-05-08T03:59:09.000Z</published>
-    <updated>2017-06-19T10:03:05.000Z</updated>
+    <updated>2017-07-15T08:42:05.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h3 id="2-css中的背景图定位扩展"><a href="#2-css中的背景图定位扩展" class="headerlink" title="2.css中的背景图定位扩展"></a>2.css中的背景图定位扩展</h3><p>background-position: 20px 20px; 是根据元素左上角开始定位的.<br>那么如何将背景图相对元素右上角定位, 并且能准确的给予距离右边多少px<br>这里有个小tip:<br>可以跟border结合使用, border-right: 20px solid transparent; background-position: 100% 20px;<br>这样得到的效果就是背景图定位在距离元素右侧20px的位置;</p>
@@ -273,11 +319,11 @@
   </entry>
   
   <entry>
-    <title>前端面试题(持续更新)</title>
+    <title>杂记(持续更新)</title>
     <link href="https://linxianshen.github.io/2017/03/18/interviewques/"/>
     <id>https://linxianshen.github.io/2017/03/18/interviewques/</id>
     <published>2017-03-18T02:41:39.000Z</published>
-    <updated>2017-03-21T08:34:47.000Z</updated>
+    <updated>2017-08-10T00:59:24.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>孔夫子曰:</strong> 学而时习之,不亦乐乎.</p>
@@ -314,7 +360,7 @@
     
       <category term="前端" scheme="https://linxianshen.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="面试题" scheme="https://linxianshen.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="杂记" scheme="https://linxianshen.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   

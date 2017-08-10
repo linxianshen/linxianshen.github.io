@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://linxianshen.github.io">
-  <title>CSL&#39;S BLOG</title>
+  <title>Tag: vue | CSL&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="CSL'S BLOG">
-<meta property="og:url" content="https://linxianshen.github.io/index.html">
+<meta property="og:url" content="https://linxianshen.github.io/tags/vue/index.html">
 <meta property="og:site_name" content="CSL'S BLOG">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSL'S BLOG">
@@ -161,41 +161,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-webpackproxy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/07/24/webpackproxy/" class="archive-article-date">
+  	<time datetime="2017-07-24T02:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/24/webpackproxy/">vue下跨域设置</a>
+      <a class="archive-article-title" href="/2017/07/24/webpackproxy/">vue下跨域设置</a>
     </h1>
   
 
-        
-        <a href="/2017/07/24/webpackproxy/" class="archive-article-date">
-  	<time datetime="2017-07-24T02:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在用vue做简易播放器的时候, 调用网易云音乐api出现了跨域问题.</p>
-<p>文档地址: <a href="https://vuejs-templates.github.io/webpack/proxy.html" target="_blank" rel="external">https://vuejs-templates.github.io/webpack/proxy.html</a></p>
-<p>在用vue-cli生成的项目下, 有个/config/index.js文件, 其中有项dev.proxyTable的参数配置,<br>这个参数主要是一个地址映射表，你可以通过设置将复杂的url简化, 你可以参照如下例子:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">proxyTable: &#123;</div><div class="line">  // proxy all requests starting with /api to jsonplaceholder</div><div class="line">  <span class="string">'/api'</span>: &#123;</div><div class="line">    target: <span class="string">'http://163.opdays.com'</span>,</div><div class="line">    changeOrigin: <span class="literal">true</span>,</div><div class="line">    pathRewrite: &#123;</div><div class="line">      <span class="string">'^/api'</span>: <span class="string">''</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>做了以上配置后, 当我们在请求中的参数写成”/api/playlist?id=317921676”,<br>即访问的是”<a href="http://163.opdays.com/playlist?id=317921676" target="_blank" rel="external">http://163.opdays.com/playlist?id=317921676</a>“</p>
-<p>这里changeOrigin的值为true的时候, 那么本地会虚拟一个服务端接收你的请求并代你发送该请求，这样就不会有跨域问题了，当然这只适用于开发环境。</p>
-<p>vue-cli的这个设置其实是依赖于其使用的http-proxy-middleware插件, 仔细看vue的目录结构, 你会发现build下的dev-server.js下有写一些关于proxyTable的使用.详细的配置说明请参照github: <a href="https://github.com/chimurai/http-proxy-middleware" target="_blank" rel="external">https://github.com/chimurai/http-proxy-middleware</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -215,666 +208,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/24/webpackproxy/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
-
   
-    <article id="post-csssecrets" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/03/csssecrets/">CSS Secrets(CSS揭秘) 读书笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/03/csssecrets/" class="archive-article-date">
-  	<time datetime="2017-07-03T08:03:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/03/csssecrets/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-worknote0508" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/08/worknote0508/">note0508(五月)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/08/worknote0508/" class="archive-article-date">
-  	<time datetime="2017-05-08T03:59:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等"><a href="#1-在angular中监听路由变化的事件-离开本页面前-做某些需要的事-比如-离开时清除定时器等等" class="headerlink" title="1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等"></a>1.在angular中监听路由变化的事件(离开本页面前, 做某些需要的事).比如,离开时清除定时器等等</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$scope</span>.<span class="variable">$on</span>(<span class="string">"<span class="variable">$stateChangeStart</span>"</span>, <span class="keyword">function</span>(event, toState, toParams, fromState, fromParams)&#123;</div><div class="line">	//<span class="keyword">do</span> something</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="2-css中的背景图定位扩展"><a href="#2-css中的背景图定位扩展" class="headerlink" title="2.css中的背景图定位扩展"></a>2.css中的背景图定位扩展</h3><p>background-position: 20px 20px; 是根据元素左上角开始定位的.<br>那么如何将背景图相对元素右上角定位, 并且能准确的给予距离右边多少px<br>这里有个小tip:<br>可以跟border结合使用, border-right: 20px solid transparent; background-position: 100% 20px;<br>这样得到的效果就是背景图定位在距离元素右侧20px的位置;</p>
-        
-          <a class="article-more-a" href="/2017/05/08/worknote0508/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">angular</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工作笔记</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">学习笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/08/worknote0508/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-inputtip" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/13/inputtip/">input输入框校对气泡插件的实现</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/13/inputtip/" class="archive-article-date">
-  	<time datetime="2017-04-13T04:00:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>啊…这是上次清明回家上网买车票是看到的一个input显示插件,感觉比较常用的.实现起来也不难, 就想着抽空也来写一个类似的气泡弹框插件.</p>
-<p>清明到现在也鸽了这么久了, 找了个时间现在来分享一下实现的步骤…</p>
-<p>代码在这:<a href="https://github.com/linxianshen/inputtip">github</a></p>
-        
-          <a class="article-more-a" href="/2017/04/13/inputtip/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">input</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">气泡</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">plugin</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/13/inputtip/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-gitignore" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/08/gitignore/">.gitignore配置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/08/gitignore/" class="archive-article-date">
-  	<time datetime="2017-04-08T09:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有些时候你必须把某些文件放到Git工作目录当中, 但是又不能提交他们.</p>
-<p>当然Git也为了我们提供了解决方法, 我们可以在git工作区的根目录下,创建一个特殊的.gitignore文件, 然后讲我们要忽略的文件名填进去, Git就会自动忽略这些文件</p>
-        
-          <a class="article-more-a" href="/2017/04/08/gitignore/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">.gitignore</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/08/gitignore/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-gitcommand" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/07/gitcommand/">Git命令操作-上传文件到github仓库</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/07/gitcommand/" class="archive-article-date">
-  	<time datetime="2017-04-07T06:17:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作为一个coder, 熟练使用git命令是必须的, 你既可以在github上寻找对你有帮助的开源项目, 也可以将自己的代码共享开源出去.<br>那么如何将本地的项目文件上传至github上呢.</p>
-<p>如果是首次上传项目文件则:<br>先进入文件夹, 通过git init把这个目录变成git可以管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init</div></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/04/07/gitcommand/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git命令</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/07/gitcommand/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-printpdf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/27/printpdf/">js生成网页pdf或打印的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/27/printpdf/" class="archive-article-date">
-  	<time datetime="2017-03-27T08:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浏览器网页中点击鼠标右键, 有打印操作, 但是这样会把整个网页的内容都包含到pdf里面.<br>现在有个需求, 就是要将网页中的某一块div里面的内容生成pdf, 另存为或者打印.</p>
-        
-          <a class="article-more-a" href="/2017/03/27/printpdf/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/27/printpdf/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-weatherapi" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/22/weatherapi/">nodejs定时调用阿里云天气api</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/22/weatherapi/" class="archive-article-date">
-  	<time datetime="2017-03-22T11:31:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>获取天气nodejs接口在实际开发中需要定时调用,在此处需要安装node-schedule定时模块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install node-schedule</div></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var url = <span class="string">'http://saweather.market.alicloudapi.com/gps-to-weather'</span>;</div><div class="line">var params = &#123;  //还有一些可选参数,参照api</div><div class="line">    from: 5,</div><div class="line">    needAlarm: 1,</div><div class="line">    needIndex: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>阿里云天气预报api</strong>: <a href="https://market.aliyun.com/products/?keyword=%E5%A4%A9%E6%B0%94&amp;c=m#ymk=%7B%22keywords%22:%22%E5%A4%A9%E6%B0%94%22,%22pageIndex%22:1,%22pageSize%22:10,%22saleMode%22:0,%22categoryId%22:%22%22%7D">click</a><br>注册登录购买免费版,会提供给你一个AppKey, AppSecret和AppCode,用于请求验证,注意是放在头部headers内的(别拼接到了url里==)</p>
-        
-          <a class="article-more-a" href="/2017/03/22/weatherapi/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">node-schedule</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">天气</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/22/weatherapi/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-swapItems" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/21/swapItems/">数组中元素前后(上下)移动函数</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/21/swapItems/" class="archive-article-date">
-  	<time datetime="2017-03-21T08:57:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="数组内元素交换"><a href="#数组内元素交换" class="headerlink" title="数组内元素交换"></a>数组内元素交换</h2><p>在使用angular或vue时, ng-repeat和v-for都能很方便得到遍历的数组中的某个元素的$index, 本文以在angular下为例:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var swapItems = <span class="keyword">function</span>(arr, index1, index2) &#123;</div><div class="line">  arr[index1] = arr.splice(index2, 1, arr[index1])[0];</div><div class="line">  <span class="built_in">return</span> arr;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>该函数使得index1,index2两位置的元素交换</p>
-        
-          <a class="article-more-a" href="/2017/03/21/swapItems/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">angular</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/21/swapItems/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-interviewques" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/18/interviewques/">杂记(持续更新)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/18/interviewques/" class="archive-article-date">
-  	<time datetime="2017-03-18T02:41:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>孔夫子曰:</strong> 学而时习之,不亦乐乎.</p>
-</blockquote>
-<h2 id="HTML-CSS篇"><a href="#HTML-CSS篇" class="headerlink" title="HTML+CSS篇"></a>HTML+CSS篇</h2>
-        
-          <a class="article-more-a" href="/2017/03/18/interviewques/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/18/interviewques/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
-
 
 
           </div>
@@ -914,10 +260,10 @@ Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true)
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
